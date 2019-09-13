@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SmurfList from "./SmurfList";
 import SmurfContext from "../contexts/SmurfContext";
+import SmurfForm from "../components/SmurfForm";
 
 function SmurfProvider() {
   const [smurfs, setSmurfs] = useState([]);
@@ -11,8 +12,9 @@ function SmurfProvider() {
   }, []);
 
   return (
-    <SmurfContext.Provider value={smurfs}>
+    <SmurfContext.Provider value={{ smurfs }}>
       <SmurfList />
+      <SmurfForm />
     </SmurfContext.Provider>
   );
 }
