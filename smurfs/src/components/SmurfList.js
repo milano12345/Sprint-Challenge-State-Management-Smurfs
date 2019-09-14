@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import SmurfContext from "../contexts/SmurfContext";
+import { SmurfContext } from "../contexts/SmurfContext";
 
-const SmurfList = props => {
+const SmurfList = () => {
   const { smurfs } = useContext(SmurfContext);
+
   return (
     <div>
       <div>

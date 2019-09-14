@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import NewSmurfList from "./NewSmurfList";
+import { NewContext } from "../contexts/SmurfContext";
 
 class SmurfForm extends Component {
   constructor() {
@@ -17,18 +17,17 @@ class SmurfForm extends Component {
     console.log(this.state);
   };
 
-  //   onSubmit = e => {
-  //     e.preventDefault();
-  //     // get our form data out of state
-  //     const { name, age, height } = this.state;
+  onSubmit = e => {
+    e.preventDefault();
+    // get our form data out of state
+    const { name, age, height } = this.state;
 
-  //     axios
-  //       .post("http://localhost:3333/smurfs", { name, age, height })
-  //       .then(result => {
-  //         <NewSmurfList data={result.data} />;
-  //         //access the results here....
-  //       });
-  //   };
+    axios
+      .post("http://localhost:3333/smurfs", { name, age, height })
+      .then(result => {
+        console.log(result);
+      });
+  };
 
   render() {
     return (
@@ -54,7 +53,7 @@ class SmurfForm extends Component {
           value={this.state.height}
           onChange={this.onChange}
         />
-        <button type="submit">Add Smurf</button>
+        <button onClick={this.onSubmit}>Add Smurf</button>
       </form>
     );
   }

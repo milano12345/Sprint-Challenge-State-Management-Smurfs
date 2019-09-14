@@ -1,5 +1,4 @@
 import React, { createContext } from "react";
 
-const SmurfContext = createContext();
-
-export default SmurfContext;
+export const SmurfContext = createContext();
+export const NewContext = createContext();

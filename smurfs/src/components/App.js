@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import SmurfProvider from "./SmurfProvider";
+
 import "./App.css";
 class App extends Component {
   render() {
